@@ -1,0 +1,20 @@
+{
+  "name": "CHUNHATPHAM DPI",
+  "short_name": "DPI",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    {
+      "src": "https://i.postimg.cc/Cx2zkJdF/F795F9DC-D1C3-46D8-A334-3B05658C8AE8.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.postimg.cc/Cx2zkJdF/F795F9DC-D1C3-46D8-A334-3B05658C8AE8.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
