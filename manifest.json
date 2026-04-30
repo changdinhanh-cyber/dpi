@@ -1,0 +1,21 @@
+{
+  "name": "DPI V3",
+  "short_name": "DPI V3",
+  "description": "Hệ thống hỗ trợ thông số DPI cực chuẩn.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "https://i.postimg.cc/Cx2zkJdF/F795F9DC-D1C3-46D8-A334-3B05658C8AE8.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.postimg.cc/Cx2zkJdF/F795F9DC-D1C3-46D8-A334-3B05658C8AE8.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
