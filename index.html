@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CHUNHATPHAM FF TOOL - V13 PRO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loader-container">
+            <div class="loader-ring"></div>
+            <img src="https://i.postimg.cc/Cx2zkJdF/F795F9DC-D1C3-46D8-A334-3B05658C8AE8.png" class="loader-logo" alt="logo">
+        </div>
+        <div class="loader-text">ĐANG QUÉT DỮ LIỆU...</div>
+    </div>
+
+    <div id="toast">Thông báo</div>
+    <div class="page-background"></div>
+
+    <div class="app-container">
+        <header class="glass-panel header-panel">
+            <div class="logo-container"><img src="https://i.postimg.cc/Cx2zkJdF/F795F9DC-D1C3-46D8-A334-3B05658C8AE8.png" class="logo-img"></div>
+            <h1 class="brand-name">FF SUPPORT PRO</h1>
+            <div class="brand-sub">VISION OS EDITION</div>
+        </header>
+
+        <section>
+            <div class="step-title">1. Chọn Nền Tảng</div>
+            <div class="os-container">
+                <div class="os-btn active" id="btn-Android" onclick="selectOS('Android')">
+                    <svg viewBox="0 0 576 512"><path d="M420.22 166.3l37.83-65.53c2.25-3.88 1-8.84-2.88-11.08-3.87-2.24-8.83-1-11.08 2.89L405.6 159.2c-34.54-15.68-73.47-24.64-114.73-24.64-41.28 0-80.2 8.95-114.74 24.64l-38.5-66.62c-2.25-3.88-7.2-5.12-11.08-2.88-3.88 2.24-5.13 7.2-2.88 11.08l37.84 65.53C68.95 214.28 10.33 302.43 0 405.3h576c-10.3-102.87-68.94-191-155.78-239z"/></svg>
+                    <span>ANDROID</span>
+                </div>
+                <div class="os-btn" id="btn-iOS" onclick="selectOS('iOS')">
+                    <svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9z"/></svg>
+                    <span>iOS</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="search-area">
+            <div class="step-title">2. Tìm Thiết Bị</div>
+            <form onsubmit="event.preventDefault(); document.getElementById('searchBtn').click();" style="position: relative;">
+                <div class="search-input-group">
+                    <div class="input-wrapper">
+                        <input type="text" id="searchInput" class="search-input" placeholder="Nhập tên máy Android..." autocomplete="off" inputmode="search">
+                        <div id="clearBtn" class="clear-btn">
+                            <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+                        </div>
+                    </div>
+                    <button type="button" id="searchBtn" class="search-btn">TÌM</button>
+                </div>
+                <div id="autocompleteList" class="autocomplete-box"></div>
+            </form>
+        </section>
+
+        <section class="glass-panel result-panel" id="resultPanel">
+            <div id="errorBox" class="error-box"></div>
+
+            <div id="deviceBox" class="device-display">
+                <p style="font-size: 11px; color: var(--text-secondary); letter-spacing: 1px; text-transform: uppercase;">Thông Số Tối Ưu Cho</p>
+                <div id="deviceName" class="device-display-name">CHƯA CÓ DỮ LIỆU</div>
+                <div id="deviceTier" class="device-tier-badge"></div>
+            </div>
+
+            <div class="sens-wrapper" id="sensWrapper">
+                <div class="sens-item"><div class="sens-info"><span class="sens-name">Nhìn xung quanh</span><span class="sens-value" id="val-1">0</span></div><div class="sens-track"><div class="sens-fill" id="bar-1"></div></div></div>
+                <div class="sens-item"><div class="sens-info"><span class="sens-name">Ống ngắm hồng tâm</span><span class="sens-value" id="val-2">0</span></div><div class="sens-track"><div class="sens-fill" id="bar-2"></div></div></div>
+                <div class="sens-item"><div class="sens-info"><span class="sens-name">Ống ngắm 2x</span><span class="sens-value" id="val-3">0</span></div><div class="sens-track"><div class="sens-fill" id="bar-3"></div></div></div>
+                <div class="sens-item"><div class="sens-info"><span class="sens-name">Ống ngắm 4x</span><span class="sens-value" id="val-4">0</span></div><div class="sens-track"><div class="sens-fill" id="bar-4"></div></div></div>
+                <div class="sens-item"><div class="sens-info"><span class="sens-name">Ống ngắm súng ngắm</span><span class="sens-value" id="val-5">0</span></div><div class="sens-track"><div class="sens-fill" id="bar-5"></div></div></div>
+                <div class="sens-item" style="margin-bottom:0;"><div class="sens-info"><span class="sens-name">Nút bắn camera tự do</span><span class="sens-value" id="val-6">0</span></div><div class="sens-track"><div class="sens-fill" id="bar-6"></div></div></div>
+                
+                <div class="extra-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Chỉ số TTDS</div>
+                        <div class="stat-val" id="val-ttds">0</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Cỡ Nút Bắn</div>
+                        <div class="stat-val" id="val-firebtn">0</div>
+                    </div>
+                </div>
+            </div>
+            
+            <p id="defaultMsg" style="text-align:center; color:var(--text-secondary); font-size:13px;">Nhập tên thiết bị để hệ thống phân tích...</p>
+        </section>
+    </div>
+
+    <script src="db.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
